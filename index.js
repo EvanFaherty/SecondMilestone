@@ -36,7 +36,7 @@ app.get('/about',  (req, res) => {
 
 app.get('/contact',  (req, res) => {
     res.type('text/plain');
-    res.send('Contact Information for our website');
+    res.send('Dont bother, we are all stuck at home!');
 });
 app.get('/personlist', (req,res) =>
     res.render('personlist', { personlist: getPeopleData }));
