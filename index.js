@@ -39,7 +39,7 @@ app.get('/contact',  (req, res) => {
     res.send('Contact Information for our website');
 });
 app.get('/personlist', (req,res) =>
-    res.render('personlist', { personlist: data }))
+    res.render('personlist', { personlist: getPeopleData }));
 
 app.get('/',  (req, res) => {
     res.cookie ('tracking', true);
