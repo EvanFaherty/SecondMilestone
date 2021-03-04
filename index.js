@@ -21,6 +21,11 @@ app.set('view engine', 'handlebars');
 // Get public Images
 app.use(express.static('public'));
 
+app.get('/',  (req, res) => {
+    res.cookie ('tracking', true);
+    res.render('home');
+});
+
 app.get('/', function (req, res) {
     res.render('home');
 });
@@ -38,13 +43,9 @@ app.get('/contact',  (req, res) => {
     res.type('text/plain');
     res.send('Dont bother, we are all stuck at home!');
 });
+
 app.get('/personlist', (req,res) =>
     res.render('personlist', { personlist: getPeopleData }));
-
-app.get('/',  (req, res) => {
-    res.cookie ('tracking', true);
-    res.render('home');
-});
 
 // Use Routes
 app.use('/', baseRouter);
