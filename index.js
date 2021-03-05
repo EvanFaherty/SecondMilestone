@@ -26,27 +26,6 @@ app.get('/',  (req, res) => {
     res.render('home');
 });
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
-
-app.get('/',  (req, res) => {
-    res.type('text/plain');
-    res.send('Champins League History');
-});
-
-app.get('/about',  (req, res) => {
-    res.render('about', { playerRouter: getPeopleData});
-});
-
-app.get('/contact',  (req, res) => {
-    res.type('text/plain');
-    res.send('Dont bother, we are all stuck at home!');
-});
-
-app.get('/personlist', (req,res) =>
-    res.render('personlist', { personlist: getPeopleData }));
-
 // Use Routes
 app.use('/', baseRouter);
 app.use('/player', playerRouter);
