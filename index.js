@@ -26,6 +26,14 @@ app.get('/',  (req, res) => {
     res.render('home');
 });
 
+app.get('/personlist/:name', (req, res) => {
+    var name = req.params.name;
+    res.render('person', { person: data[name] })
+})
+
+app.get('/personlist', (req,res) =>
+       res.render('personlist', { personlist: data }))
+   
 // Use Routes
 app.use('/', baseRouter);
 app.use('/player', playerRouter);
