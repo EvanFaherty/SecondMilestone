@@ -21,6 +21,7 @@ app.set('view engine', 'handlebars');
 // Get public Images
 app.use(express.static('public'));
 
+// To View Cookie in Chrome Dev Tools
 app.get('/',  (req, res) => {
     res.cookie ('tracking', true);
     res.render('home');
