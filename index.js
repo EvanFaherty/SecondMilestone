@@ -20,20 +20,6 @@ app.set('view engine', 'handlebars');
 
 // Get public Images
 app.use(express.static('public'));
-
-// To View Cookie in Chrome Dev Tools
-app.get('/',  (req, res) => {
-    res.cookie ('tracking', true);
-    res.render('home');
-});
-
-// Get list of Players
-app.get('/personlist/:name', (req, res) => {
-    var name = req.params.name;
-    res.render('person', { person: data[name] })
-})
-app.get('/personlist', (req,res) =>
-       res.render('personlist', { personlist: getPeopleData }))
    
 // Use Routes
 app.use('/', baseRouter);
