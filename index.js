@@ -39,6 +39,4 @@ app.use((err, req, res, next) => {
     res.status(500);
     res.send('500 - Server Error');
 });
-
-app.get('/', (req, res) => res.send('Welcome to the Uefa Champions League Archive!'))
 app.listen(port, () => console.log(`Listening on port ${port}!`))
