@@ -9,8 +9,10 @@ const playerRouter = require('./routes/player');
 
 // Cookie
 const cookieParser = require('cookie-parser');
-const { getPeopleData } = require('./lib/data.js');
 app.use(cookieParser("My Website Cookie!"));
+
+// middleware for parsing the body of Posts
+app.use(express.urlencoded({ extended: true })) 
 
 // set up handlebars view engine
 var handlebars = require('express-handlebars')
