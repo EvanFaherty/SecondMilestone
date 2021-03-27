@@ -69,5 +69,4 @@ router.post('/addnew', (req, res) => {
         req.session.staffdata = { name: req.body.firstname + " " + req.body.surname };
         res.redirect(303, '/staff/personadded')
     })
-
     module.exports = router;
