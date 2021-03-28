@@ -48,8 +48,8 @@ router.post('/addnew', (req, res) => {
 
     router.get('/personadded', (req, res) => {
 
-        if (req.session.staffdata) {
-            var newName = req.session.staffdata.name;
+        if (req.session.peopleData) {
+            var newName = req.session.peopleData.name;
         }
         else {
             var newName = "";
@@ -61,12 +61,13 @@ router.post('/addnew', (req, res) => {
         console.table(req.body);
         req.session.flash = 
         { type: 'success', intro: 'Data Saved:', message:  "Data for <strong>" + req.body.firstname + " " + req.body.surname + "</strong> has been added"}
-        res.redirect(303, '/staff')
+        res.redirect(303, '/player')
     })
     router.post('/addnew', (req, res) => {
         console.log("Data received from a  post");
         console.table(req.body);
-        req.session.staffdata = { name: req.body.firstname + " " + req.body.surname };
-        res.redirect(303, '/staff/personadded')
+        req.session.peopleData = { name: req.body.firstname + " " + req.body.surname };
+        res.redirect(303, '/player/personadded')
     })
+    
     module.exports = router;

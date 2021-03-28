@@ -14,6 +14,16 @@ app.use(cookieParser("My Website Cookie!"));
 // middleware for parsing the body of Posts
 app.use(express.urlencoded({ extended: true })) 
 
+// Session Code
+session = require('express-session');
+
+app.use(session(
+    {secret: "Evan Is Mighty!", 
+    cookie: { maxage: 6000},
+    resave: false,
+    saveUninitialized: false
+  }))
+
 // set up handlebars view engine
 var handlebars = require('express-handlebars')
 .create({ defaultLayout:'main' });
