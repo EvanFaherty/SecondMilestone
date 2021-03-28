@@ -27,4 +27,11 @@ router.get('/contact',  (req, res) => {
     res.render('contact');
 });
 
+router.get('/icons',  (req, res) => {
+    res.render('icons');
+});
+
+router.get('/player/personlist',  (req, res) => {
+    res.render('personlist');
+});
 module.exports = router;
