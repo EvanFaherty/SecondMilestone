@@ -6,7 +6,7 @@ const testData = require('../lib/data.js');
 
 console.table(testData.getPeopleData());
 
-// Add a new person to my Database
+
 router.get('/', (req, res) =>
     res.render('personlist', { personlist: testData.getPeopleData() }));
 
@@ -48,8 +48,8 @@ router.post('/addnew', (req, res) => {
 
     router.get('/personadded', (req, res) => {
 
-        if (req.session.peopleData) {
-            var newName = req.session.peopleData.name;
+        if (req.session.peopledata) {
+            var newName = req.session.peopledata.name;
         }
         else {
             var newName = "";
@@ -66,8 +66,8 @@ router.post('/addnew', (req, res) => {
     router.post('/addnew', (req, res) => {
         console.log("Data received from a  post");
         console.table(req.body);
-        req.session.peopleData = { name: req.body.firstname + " " + req.body.surname };
+        req.session.peopledata = { name: req.body.firstname + " " + req.body.surname };
         res.redirect(303, '/player/personadded')
     })
-    
+
     module.exports = router;
