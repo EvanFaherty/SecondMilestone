@@ -9,7 +9,28 @@ const playerRouter = require('./routes/player');
 
 // Cookie
 const cookieParser = require('cookie-parser');
-app.use(cookieParser("My Website Cookie!"));
+const { route } = require('./routes/base.js');
+
+var handlebars = require('express-handlebars')
+ .create({ defaultLayout: 'main' });
+
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+app.use(cookieParser("Evan Was here "));
+
+app.get('/',  (req, res) => {
+
+    var message = "";
+    if (req.signedCookies.tracking){
+
+        var dateLastVisit = req.signedCookies.tracking;
+        var message = "Welcome back, you last visited on : " + dateLastVisit;
+    }
+    var currentDate = new Date();
+    res.cookie('tracking',currentDate.toDateString(), {signed : true})
+
+    res.render('home', {'message': message});
+});
 
 // middleware for parsing the body of Posts
 app.use(express.urlencoded({ extended: true })) 

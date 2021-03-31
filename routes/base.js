@@ -4,15 +4,11 @@ const router = express.Router();
 router.get('/',  (req, res) => {
 
     var message = "";
-     
-    if (req.signedCookies.tracking){
-        var dateLastVisit = req.signedCookies.tracking;
-        var message = "Welcome back, you last visited on : " + dateLastVisit;
+    if (req.cookies.tracking){
+
+        var message = "Welcome back to our Website!";
     }
-
-    var currentDate = new Date();
-    res.cookie('tracking',currentDate.toDateString(), {signed : true});
-
+    res.cookie ('tracking', true);
     res.render('home', {'message': message});
 });
 
