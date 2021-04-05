@@ -58,6 +58,10 @@ app.use(express.static('public'));
 app.use('/', baseRouter);
 app.use('/player', playerRouter);
 
+// import our own Middleware
+const {flashMiddleware} = require('./lib/middleware.js');
+app.use(flashMiddleware);
+
 // custom 404 page
 app.use( (req, res) => {
     res.type('text/plain');
