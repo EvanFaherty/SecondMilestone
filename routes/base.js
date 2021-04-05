@@ -6,7 +6,7 @@ router.get('/',  (req, res) => {
     var message = "";
     if (req.cookies.tracking){
 
-        var message = "Welcome back to our Website!";
+        var message = "Welcome back user!";
     }
     res.cookie ('tracking', true);
     res.render('home', {'message': message});
