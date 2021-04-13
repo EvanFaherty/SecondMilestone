@@ -3,9 +3,6 @@ const app = express()
 const port = 3000
 const testData = require('./lib/data.js');
 
-// the database
-require('./lib/db');
-
 // Import Routes
 const baseRouter = require('./routes/base');
 const playerRouter = require('./routes/player');
