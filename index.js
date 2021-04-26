@@ -16,7 +16,7 @@ var handlebars = require('express-handlebars')
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.use(cookieParser("Evan Was here "));
+app.use(cookieParser("Evan Was here"));
 
 app.get('/',  (req, res) => {
 
@@ -54,6 +54,10 @@ app.set('view engine', 'handlebars');
 // Get public Images
 app.use(express.static('public'));
    
+// import our own Middleware
+const {flashMiddleware} = require('./lib/middleware.js');
+app.use(flashMiddleware);
+
 // Use Routes
 app.use('/', baseRouter);
 app.use('/player', playerRouter);
