@@ -1,0 +1,15 @@
+{
+  "_id": "BarcelonaArgentina",
+  "customerID": 10,
+  "name": {
+    "first": "Lionel",
+    "last": "Messi"
+  },
+  "email": "lionelmessi@gmail.com",
+  "phone": [
+    {
+      "location": "Barcelona",
+      "number": "087-123456"
+    }
+  ]
+}

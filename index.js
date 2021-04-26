@@ -33,7 +33,7 @@ app.get('/',  (req, res) => {
 });
 
 // middleware for parsing the body of Posts
-app.use(express.urlencoded({ extended: true })) 
+app.use(express.urlencoded({ extended: true }))
 
 // Session Code
 session = require('express-session');
@@ -53,10 +53,10 @@ app.set('view engine', 'handlebars');
 
 // Get public Images
 app.use(express.static('public'));
-   
+
 // import our own Middleware
-const {flashMiddleware} = require('./lib/middleware.js');
-app.use(flashMiddleware);
+const { newsMiddleware, flashMiddleware} = require('./lib/middleware.js');
+app.use(flashMiddleware, newsMiddleware);
 
 // Use Routes
 app.use('/', baseRouter);
