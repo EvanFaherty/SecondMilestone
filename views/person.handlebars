@@ -13,3 +13,10 @@
 {{/if}}
 
 <img src={{person.imageurl}} alt="photo of the person" height="280" width="250">
+
+<a href='{{person.name}}/edit'>
+<button type="button" class="btn btn-primary">Edit</button></a>
+
+<a href='/player/{{person.name}}/delete'
+ onclick="return confirm('are you sure you want to delete this person?');">
+<button type="button" class="btn btn-danger">Delete</button> </a>

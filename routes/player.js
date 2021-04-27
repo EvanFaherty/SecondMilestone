@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 // import the data we need
-
 const testData = require('../lib/data.js');
 
 router.get('/', (req, res) =>
@@ -41,8 +40,6 @@ router.get('/:name', (req, res) => {
     else {
         res.render('person', { person: data[name] })
     }
-
-
 })
 
 module.exports = router;
