@@ -4,7 +4,7 @@ const PlayerSchema = mongoose.Schema(
     {
     name: {type: String},
     dob: {type: String},
-    goals: {type: int},
+    goals: {type: String},
     imageurl: {type: String},
     }
   )
