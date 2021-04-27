@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const testData = require('./lib/data.js');
+require('./lib/data.js');
 
 // Import Database
 require('./lib/db');
