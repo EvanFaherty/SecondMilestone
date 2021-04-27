@@ -13,11 +13,9 @@ router.get('/', async (req, res) => {
 
 router.get('/addnew', (req, res) => {
     res.render('personform')
-}
-)
+})
 
 router.post('/addnew', (req, res) => {
-    
     console.log("Data received from a  post");
     console.table(req.body);
 
